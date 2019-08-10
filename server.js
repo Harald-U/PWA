@@ -22,6 +22,9 @@ const express = require('express');
 const fetch = require('node-fetch');
 const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
 
+var cfenv = require("cfenv");
+var appEnv = cfenv.getAppEnv();
+
 // CODELAB: Change this to add a delay (ms) before the server responds.
 const FORECAST_DELAY = 0;
 
@@ -187,9 +190,9 @@ function startServer() {
   app.use(express.static('public'));
 
   // Start the server
-  return app.listen($PORT, () => {
+  return app.listen(appEnv.port, () => {
     // eslint-disable-next-line no-console
-    console.log('Local DevServer Started on port: ' $PORT);
+    console.log('Local DevServer Started on port: ' + $PORT);
   });
 }
 
