@@ -20,15 +20,18 @@
 
 const express = require('express');
 const fetch = require('node-fetch');
-const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
-
+// HUe: Not required for Cloud Foundry
+// const redirectToHTTPS = require('express-http-to-https').redirectToHTTPS;
+// HUe: Required for Cloud Foundry
 var cfenv = require("cfenv");
 var appEnv = cfenv.getAppEnv();
+// HUe/
 
 // CODELAB: Change this to add a delay (ms) before the server responds.
 const FORECAST_DELAY = 0;
 
 // CODELAB: If running locally, set your Dark Sky API key here
+// HUe: On CF set Runtime / Environment Vars in App Dashboard instead, so do not change, leave as is
 const API_KEY = process.env.DARKSKY_API_KEY;
 const BASE_URL = `https://api.darksky.net/forecast`;
 
@@ -167,7 +170,7 @@ function getForecast(req, resp) {
 function startServer() {
   const app = express();
 
-  // Redirect HTTP to HTTPS,
+  // Redirect HTTP to HTTPS -- HUE: Not required for Cloud Foundry, will throw redirect error if present
   // app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 
   // Logging for each request
@@ -190,9 +193,13 @@ function startServer() {
   app.use(express.static('public'));
 
   // Start the server
-  return app.listen(appEnv.port, appEnv.bind, () => {
+  // HUe Changes for CF: 
+  //return app.listen('8000', () => {
     // eslint-disable-next-line no-console
-    console.log('Local DevServer Started on URL: ' + appEnv.url);
+    // console.log('Local DevServer Started on port 8000...');
+  return app.listen(appEnv.port, appEnv.bind, () => {
+    console.log('Local DevServer started on URL: ' + appEnv.url);
+    // HUe/
   });
 }
 
