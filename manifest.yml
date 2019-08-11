@@ -3,4 +3,4 @@ applications:
 - instances: 1
   name: HUe-PWA
   memory: 128MB
-  random-route: true
+  random-route: false
