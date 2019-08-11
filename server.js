@@ -192,7 +192,7 @@ function startServer() {
   // Start the server
   return app.listen(appEnv.port, appEnv.bind, () => {
     // eslint-disable-next-line no-console
-    console.log('Local DevServer Started on port: ' + appEnv.url);
+    console.log('Local DevServer Started on URL: ' + appEnv.url);
   });
 }
 

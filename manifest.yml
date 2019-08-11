@@ -7,4 +7,4 @@ applications:
   command: npm start
   memory: 128MB
   domain: eu-de.mybluemix.net
-  host: HUe-PWA
+  host: PWA-${random-word}
