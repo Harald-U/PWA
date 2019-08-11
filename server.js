@@ -142,7 +142,7 @@ function generateFakeForecast(location) {
  * @param {Response} resp response object from Express.
  */
 function getForecast(req, resp) {
-  const location = req.params.location || '40.7720232,-73.9732319';
+  const location = req.params.location || '48.7793504,9.0371307';
   const url = `${BASE_URL}/${API_KEY}/${location}`;
   fetch(url).then((resp) => {
     if (resp.status !== 200) {
