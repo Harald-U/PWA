@@ -1,6 +1,6 @@
 ---
 applications:
 - instances: 1
-  name: <YourInitialsHere>-PWA
+  name: DHBW-PWA
   memory: 128MB
   random-route: false

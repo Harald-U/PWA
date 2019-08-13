@@ -1,54 +1,87 @@
-# Your First Progressive Web App Codelab
+# Your First Progressive Web App
+## Deployed into Cloud Foundry on IBM Cloud
 
-These are the resource files needed for the
-[Your First Progressive Web App][codelab] codelab.
+This tutorial is based on [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/). The original tutorial is available as PDF in the repository. I made some modifications to the code to be able to deploy it as Cloud Foundry app on the IBM Cloud:
 
-In this codelab, you'll  build a weather web app using Progressive Web App
-techniques. Your app will:
+* Added manifest.yml: Required to automatically deploy
+* package.json: removed express-http-to-https, added cfenv 
+* server.js:
+    -  removed express-http-to-https, added cfenv as required
+    -  removed https redirect (CF is terminating HTTPS at the Router)
+    -  read port number, host, and URL from CF Environment
 
-* Use responsive design, so it works on desktop or mobile.
-* Be fast & reliable, using a service worker to precache the app resources
-  (HTML, CSS, JavaScript, images) needed to run, and cache the weather data
-  at runtime to improve performance.
-* Be installable, using a web app manifest and the `beforeinstallprompt` event
-  to notify the user it's installable.
+## Prepare access to IBM Cloud
+
+If you haven't done already, register for a free IBM Cloud account [here](https://cloud.ibm.com) (Button on the left side). After registration check your emails for a verification mail, you need to click a link in the mail to complete the installation. Logon to the IBM Cloud using the same URL.
+
+Follow these instructions to install the [IBM Cloud-CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli) for your OS.
+
+Login to the IBM Cloud using the email address you registered with:
+
+```
+$ ibmcloud login -u <youruser@email>
+```
+
+You will see something like this:
+
+![ic login](media/ic01.png)
+
+Press 'Enter' to skip the selection of a region!
+
+Cloud Foundry has a way to organize projects into regions, organizations, and spaces. We need to target the correct one. Display some account details with:
+
+```
+$ ibmcloud account orgs 
+```
+
+![ic login](media/ic02.png)
+
+This example account is active in Region 'eu-gb' (= London). Set the Cloud Foundry region to the region you just determined for your account and then set the other Cloud Foundry specifics to the defaults for that region:
+
+```
+$ ibmcloud target -r  eu-gb
+$ ibmcloud target --cf
+```
+
+The result should look similar to this:
+![ic login](media/ic03.png)
+
+Region, Org, and Space are now set.
+
+## Initial Deployment of the unmodified PWA
+
+Edit the file 'manifest.yml':
+
+```
+---
+applications:
+- instances: 1
+  name: <YourInitialsHere>-PWA
+  memory: 128MB
+  random-route: false
+```
+Change <YourInitialHere> to your own initials. This name must be unique. Be careful: YAML (Yet Another Markup Language) is very specific with indents, dashes (-),  and spaces. Do not chage the overall structure of the file! Save it and then push the app to the IBM Cloud with:
+
+```
+$ ibmcloud app push
+```
+
+The end result hopefully looks something like this:
+
+![ic app push](media/ic04.png)
+
+The state should be 'running' and the routes should show a value: this is the URL of the app, copy it into a browser, add 'https://' in front, and see what happens:
+
+![ic app browser](media/ic05.png)
+
+This is the unmodified Progressive Web App, now continue with the original instructions at:
+[https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/), but skip the sections:
+
+- Strongly Recommended: Use Glitch to import the repo (we use the IBM Cloud instead)
+- Alternative: Download code & work locally, Download source code 
 
 
-## What you'll learn
-
-* How to create and add a web app manifest
-* How to provide a simple offline experience
-* How to provide a full offline experience
-* How to make your app installable
-
-## Getting started
-
-To get started, check out the [codelab instruction][codelab]
 
 
-## Feedback
-
-This is a work in progress, if you find a mistake, please [file an issue][git-issue].
 
 
-## License
-
-Copyright 2019 Google, Inc.
-
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements. See the NOTICE file distributed with this work for
-additional information regarding copyright ownership. The ASF licenses this
-file to you under the Apache License, Version 2.0 (the “License”); you may not
-use this file except in compliance with the License. You may obtain a copy of
-the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed
-under the License is distributed on an “AS IS” BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied. See the License for the
-specific language governing permissions and limitations under the License.
-
-
-[codelab]: https://codelabs.developers.google.com/codelabs/your-first-pwapp/
-[git-issue]: https://github.com/googlecodelabs/your-first-pwapp/issues
