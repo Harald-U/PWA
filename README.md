@@ -12,7 +12,7 @@ This tutorial is based on [Your First Progressive Web App](https://developers.go
 
 ## Prepare access to IBM Cloud
 
-If you haven't done already, register for a free IBM Cloud account [here](https://cloud.ibm.com) (Button on the left side). After registration check your emails for a verification mail, you need to click a link in the mail to complete the installation. Logon to the IBM Cloud using the same URL.
+If you haven't done already, register for a free IBM Cloud account [here](https://cloud.ibm.com) (Button on the left side). After registration check your emails for a verification mail, you need to click a link in the mail to complete the registration. Then logon to the IBM Cloud using the same URL.
 
 Follow these instructions to install the [IBM Cloud-CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli) for your OS.
 
@@ -60,7 +60,7 @@ applications:
   memory: 128MB
   random-route: false
 ```
-Change <YourInitialHere> to your own initials. This name must be unique. Be careful: YAML (Yet Another Markup Language) is very specific with indents, dashes (-),  and spaces. Do not chage the overall structure of the file! Save it and then push the app to the IBM Cloud with:
+Change `<YourInitialHere>` to your own initials. This name must be unique hence the initials. Be careful: YAML (Yet Another Markup Language) is very specific with indents, dashes (-),  and spaces. Do not change the overall structure of the file! Save it and then push the app to the IBM Cloud with:
 
 ```
 $ ibmcloud app push
@@ -77,7 +77,7 @@ The state should be 'running' and the routes should show a value: this is the UR
 This is the unmodified Progressive Web App, now continue with the original instructions at:
 [https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/), but skip the sections:
 
-- Strongly Recommended: Use Glitch to import the repo (we use the IBM Cloud instead)
+- Strongly Recommended: Use Glitch to import the repo _(we use the IBM Cloud instead)_
 - Alternative: Download code & work locally, Download source code 
 
 
