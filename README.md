@@ -14,7 +14,7 @@ This tutorial is based on [Your First Progressive Web App](https://developers.go
 
 If you haven't done already, register for a free IBM Cloud account [here](https://cloud.ibm.com) (Button on the left side). After registration check your emails for a verification mail, you need to click a link in the mail to complete the registration. Then logon to the IBM Cloud using the same URL.
 
-Follow these instructions to install the [IBM Cloud-CLI](https://cloud.ibm.com/docs/cli/reference/ibmcloud?topic=cloud-cli-install-ibmcloud-cli) for your OS.
+Follow these instructions to install the [IBM Cloud-CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-install-ibmcloud-cli#install-ibmcloud-cli) for your OS.
 
 Login to the IBM Cloud using the email address you registered with:
 
