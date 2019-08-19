@@ -1,7 +1,7 @@
 # Your First Progressive Web App
 ## Deployed into Cloud Foundry on IBM Cloud
 
-This tutorial is based on [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/). The original tutorial is available as [PDF](media/Your First Progressive Web App.pdf) in the repository. I made some modifications to the code to be able to deploy it as Cloud Foundry app on the IBM Cloud:
+This tutorial is based on [Your First Progressive Web App](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/). The original tutorial is available as PDF (media/Your First Progressive Web App.pdf) in the repository. I made some modifications to the code to be able to deploy it as Cloud Foundry app on the IBM Cloud:
 
 * Added manifest.yml: Required to automatically deploy
 * package.json: removed express-http-to-https, added cfenv 
