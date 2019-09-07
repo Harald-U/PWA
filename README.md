@@ -10,7 +10,17 @@ This tutorial is based on [Your First Progressive Web App](https://developers.go
     -  removed https redirect (CF is terminating HTTPS at the Router)
     -  read port number, host, and URL from CF Environment
 
-## Prepare access to IBM Cloud
+ ## Prequisites   
+
+ ### Chrome Browser
+
+ The tutorial makes use of "Lighthouse". a developer tool that is only available in the Google Chrome Browser.
+
+ ### Dark Sky API
+
+ This is actually optional. If you want live weather data instead of simulated data you need to get a Dark Sky API key, see [instructions ](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#get_a_key_for_the_dark_sky_api).
+
+### IBM Cloud Account
 
 If you haven't done already, register for a free IBM Cloud account [here](https://cloud.ibm.com) (Button on the left side). After registration check your emails for a verification mail, you need to click a link in the mail to complete the registration. Then logon to the IBM Cloud using the same URL.
 
