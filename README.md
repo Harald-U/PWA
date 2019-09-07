@@ -60,6 +60,22 @@ Region, Org, and Space are now set.
 
 ## Initial Deployment of the unmodified PWA
 
+Clone (if you have git installed) or download the code from https://github.com/Harald-U/PWA
+
+For Git clone use:
+
+```
+$ git clone https://github.com/Harald-U/PWA.git
+```
+ 
+ Or download as [ZIP File](https://github.com/Harald-U/PWA/archive/master.zip) and unzip.
+
+Change into the projects directory:
+
+```
+$ cd PWA
+```
+
 Edit the file 'manifest.yml':
 
 ```
@@ -89,6 +105,12 @@ This is the unmodified Progressive Web App, now continue with the original instr
 
 - Strongly Recommended: Use Glitch to import the repo _(we use the IBM Cloud instead)_
 - Alternative: Download code & work locally, Download source code 
+
+__IMPORTANT:__ Every time you want to test your changes you need to push the code to the IBM Cloud again!
+
+```
+$ ibmcloud app push
+```
 
 
 
