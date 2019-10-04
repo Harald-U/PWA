@@ -18,7 +18,9 @@ This tutorial is based on [Your First Progressive Web App](https://developers.go
 
  ### Dark Sky API
 
- This is actually optional. If you want live weather data instead of simulated data you need to get a Dark Sky API key, see [instructions ](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#get_a_key_for_the_dark_sky_api).
+This is actually optional. If you want live weather data instead of simulated data you need to get a Dark Sky API key, see [instructions ](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#get_a_key_for_the_dark_sky_api).
+
+Instructions on how to add an API key to your Cloud Foundry app are at the ed of this README.
 
 ### IBM Cloud Account
 
@@ -110,6 +112,16 @@ __IMPORTANT:__ Every time you want to test your changes you need to push the cod
 
 ```
 $ ibmcloud app push
+```
+
+
+## Add a Dark Sky API Key to your Cloud Foundry App
+
+If you obtained a Dark Sky API key, you can add it to the Cloud Foundry app as an environment variable using these commands:
+
+```
+$ ibmcloud app env-set <Your-CF-App-Name> DARKSKY_API_KEY <apikey>
+$ ibmcloud app restage <Your-CF-App-Name>
 ```
 
 
