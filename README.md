@@ -102,11 +102,10 @@ The state should be 'running' and the routes should show a value: this is the UR
 
 ![ic app browser](media/ic05.png)
 
-This is the unmodified Progressive Web App, now continue with the original instructions at:
-[https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/), but skip the sections:
+You have now "published" the unmodified Progressive Web App.
 
-- Strongly Recommended: Use Glitch to import the repo _(we use the IBM Cloud instead)_
-- Alternative: Download code & work locally, Download source code 
+To __change this responsive app into a progressive app__ continue with the original instructions at:
+[https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#establish_a_baseline](https://developers.google.com/web/fundamentals/codelabs/your-first-pwapp/#establish_a_baseline)
 
 __IMPORTANT:__ Every time you want to test your changes you need to push the code to the IBM Cloud again!
 
